@@ -62,9 +62,9 @@ def update_contact(contact):
 
         target = contact[name]   # to create an alias for storing values from dictionary contact
         if new_phone:
-            target['phone'] = new_phone
+            target['Phonenumber'] = new_phone
         if new_email:
-            target['email'] = new_email
+            target['EmailID'] = new_email
         if new_name and new_name != name:
             contact[new_name] = contact.pop(name)
             print(f"\nContact renamed to {new_name} and updated.\n")
