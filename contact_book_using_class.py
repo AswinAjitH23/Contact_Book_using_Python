@@ -1,6 +1,6 @@
 # Contact Book
 """ This project is a contact book that stores user details(name,phonenumber,email) using dictionaries in python.
-It allows a user to add/delete/update/search a contact. Used : OOPS, Dictionary, Functions, Control and conditional statements. """
+It allows a user to add/delete/update/search a contact. Used : OOPS, Dictionary, Functions, Control and Conditional statements. """
 
 class Contactbook:
 
