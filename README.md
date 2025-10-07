@@ -13,3 +13,15 @@ Concepts Covered:
 Python Dictionaries
 Functions and Control Flow
 Object-Oriented Programming (Classes, Methods,Objects)
+
+Concepts Covered
+
+Python Dictionaries
+
+Functions and Control Flow
+
+Object-Oriented Programming (Classes, Methods, Objects)
+
+Input/Output Handling
+
+Data Management without File Storage
