@@ -13,18 +13,6 @@ class Contactbook:
         print("********************")
 
 
-    def menu():
-        """To print the menu of contact book"""
-
-        print("--- Contact Book ---")
-        print("1. Add Contact")
-        print("2. Delete Contact")
-        print("3. Update Contact")
-        print("4. Search Contact")
-        print("5. Show Contact")
-        print("6. Exit")
-
-
     def contact_details():
         """To input values from user for the contact book (name,ph number and email)"""
 
@@ -104,7 +92,7 @@ class Contactbook:
                 add_contact(contact)
 
 
-    def display_contact(contact):
+    def show_contact(contact):
         """To display the contacts in the contact book"""
 
         if not contact:
@@ -116,32 +104,35 @@ class Contactbook:
         for name, details in contact.items():
             print_contact_details(name, details)
 
-contactbook = Contactbook()
 
-#contact = {}
+contactbook = Contactbook()
 
 while True:
 
-    print_star()
-    menu()
-    print_star()
+    print("--- Contact Book ---")
+    print("1. Show Contacts")
+    print("2. Add Contact")
+    print("3. Delete Contact")
+    print("4. Update Contact")
+    print("5. Search Contact")
+    print("6. Exit")
 
     choice = int(input("Choose a option (1 - 6) to continue:"))
 
     if choice == 1:
-        add_contact(contact)
+        contactbook.show_contact()
 
     elif choice == 2:
-        delete_contact(contact)
+        contactbook.add_contact()
 
     elif choice == 3:
-        update_contact(contact)
+        contactbook.delete_contact()
         
     elif choice == 4: 
-        search_contact(contact)
+        contactbook.update_contact()
     
     elif choice == 5:
-        display_contact(contact)
+        contactbook.search_contact()
     
     elif choice == 6:
         print("\nExiting the Contact Book, Bye:)\n")
