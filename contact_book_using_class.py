@@ -6,14 +6,15 @@ class Contactbook:
 
     def __init__(self):
         self.contact = {}
+  
 
-    def print_star():
+    def print_star(self):
         """To print star"""
 
         print("********************")
+  
 
-
-    def contact_details():
+    def contact_details(self):
         """To input values from user for the contact book (name,ph number and email)"""
 
         name = input("\nEnter the name:")     
@@ -22,93 +23,95 @@ class Contactbook:
         return name, phoneNumber, emailId
 
 
-    def add_contact(contact):
+    def add_contact(self):
         """To add a contact to contact book"""
 
-        name, phoneNumber, emailId = contact_details()
-        if name in contact:
-            print(f"\n{name} already exist in the contact book\n")
+        name, phoneNumber, emailId = self.contact_details()
+        if name in self.contact:
+            print(f"\n{name} already exist in the contact book")
         else:    
-            contact[name] = {"Phonenumber":phoneNumber,"EmailID":emailId}
-            print("\nContact added successfully\n")
+            self.contact[name] = {"Phonenumber":phoneNumber,"EmailID":emailId}
+            print(f"\nContact {name} added successfully!!!")
 
 
-    def delete_contact(contact):
+    def delete_contact(self):
         """To delete a contact from contact book"""
 
         name = input("\nEnter the name of the person to delete:")
-        if name in contact:
-            del contact[name]
-            print("\nSuccessfully Deleted Contact\n")
+        if name in self.contact:
+            del self.contact[name]
+            print(f"\nContact {name} deleted successfully!!!")
         else:
-            print(f"\n{name} not exist in the contact book!!!\n")
+            print(f"\n{name} not exist in the contact book.")
 
 
-    def update_contact(contact):
+    def update_contact(self):
         """To update a contact in the contact book"""
 
         name = input("\nEnter the name to update the contact:")
-        if name in contact:
+        if name in self.contact:
             new_name = input("\nNew name (or press Enter to keep this name):")
             new_phone = input("New phone (or press Enter to keep this phonenumber):")
             new_email = input("New email (or press Enter to keep this email):")
 
-            target = contact[name]   # to create an alias for storing values from dictionary contact
+            target = self.contact[name]   # to create an alias for storing values from dictionary contact
             if new_phone:
-                target['phone'] = new_phone
+                target['Phonenumber'] = new_phone
             if new_email:
-                target['email'] = new_email
+                target['EmailID'] = new_email
             if new_name and new_name != name:
-                contact[new_name] = contact.pop(name)
-                print(f"\nContact renamed to {new_name} and updated.\n")
+                self.contact[new_name] = self.contact.pop(name)
+                print(f"\nContact renamed to {new_name} and updated.")
             else:
-                print(f"\nContact {name} updated.\n")
+                print(f"\nContact {name} updated.")
 
         else:
-            print(f"\n{name} not exist in the contact book!!!\n")
+            print(f"\n{name} not exist in the contact book!!!")
 
 
-    def print_contact_details(name, details):
+    def print_contact_details(self, name, details):
         """To print the contact details"""
 
         print(f"\nName:        {name}")
         print(f"Phonenumber: {details.get('Phonenumber')}")
-        print(f"EmailID:     {details.get('EmailID')}\n")
+        print(f"EmailID:     {details.get('EmailID')}")
 
 
-    def search_contact(contact):
+    def search_contact(self):
         """To search a contact is available in the contact book"""
 
         name = input("\nEnter the name to search in your contact book:")
-        if name in contact:
+        if name in self.contact:
             print(f"\n{name} is in contact book\n")
             decision = input("Do you want to see the details(y/n):")  # to ask the user wheather to see the details
             if decision.lower() == 'y':
-                print_contact_details(name, contact[name])
+                self.print_contact_details(name, self.contact[name])
         else:
             print(f"\n{name} not found in your contact!!!")
             add_new = input("\nDo you want to add this contact?(y/n):")  # if no contact found, asking user to add that name to contact
             if add_new.lower() == 'y':
-                add_contact(contact)
+                self.add_contact()
 
 
-    def show_contact(contact):
+    def show_contact(self):
         """To display the contacts in the contact book"""
 
-        if not contact:
-            print("\nNo contacts to show\n")
+        if not self.contact:
+            print("\nNo contacts to show!!!")
             return
         
         print("\n----All contacts----")
-        print_star()
-        for name, details in contact.items():
-            print_contact_details(name, details)
+        self.print_star()
+        for name, details in self.contact.items():
+            self.print_contact_details(name, details)
 
 
 contactbook = Contactbook()
 
 while True:
 
+    print("\n")
+    contactbook.print_star()
     print("--- Contact Book ---")
     print("1. Show Contacts")
     print("2. Add Contact")
@@ -116,6 +119,7 @@ while True:
     print("4. Update Contact")
     print("5. Search Contact")
     print("6. Exit")
+    contactbook.print_star()
 
     choice = int(input("Choose a option (1 - 6) to continue:"))
 
