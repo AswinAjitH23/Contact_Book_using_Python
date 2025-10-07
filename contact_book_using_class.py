@@ -6,13 +6,7 @@ class Contactbook:
 
     def __init__(self):
         self.contact = {}
-  
-
-    def print_star(self):
-        """To print star"""
-
-        print("********************")
-  
+    
 
     def contact_details(self):
         """To input values from user for the contact book (name,ph number and email)"""
@@ -105,6 +99,11 @@ class Contactbook:
         for name, details in self.contact.items():
             self.print_contact_details(name, details)
 
+
+    def print_star(self):
+        """To print star"""
+
+        print("********************")
 
 contactbook = Contactbook()
 
