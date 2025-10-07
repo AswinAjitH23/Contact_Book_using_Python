@@ -1,4 +1,15 @@
 # Contact_Book_using_Python
 
-This project is a contact book that stores user details(name,phonenumber,email) using dictionaries in python.
-It allows a user to add/delete/update/search a contact. In this project there is two files one is implemented using basics in python like functions, dictionaries, control and conditional statements and second is implemented using OOPs concept. I followed this method to get a better understanding of the concepts.
+A simple Contact Book application built in Python to manage user details such as name, phonenumber and email. This project demonstrates two different programming approaches functional programming and object-oriented programming(OOP) to get a clear understanding of both styles.
+
+Features:
+Show All Contacts – View all saved contacts.
+Add Contact – Save a new contact with name, phone number and email.
+Delete Contact – Remove an existing contact by name.
+Update Contact – Modify contact details (name, phone number or email).
+Search Contact – Find and display specific contact information.
+
+Concepts Covered:
+Python Dictionaries
+Functions and Control Flow
+Object-Oriented Programming (Classes, Methods,Objects)
