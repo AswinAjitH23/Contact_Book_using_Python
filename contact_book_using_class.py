@@ -11,27 +11,21 @@ Search Contact – Find and display specific contact information.
 Concepts Covered:
 Python Dictionaries
 Control Flow
-Object-Oriented Programming (Class, Methods, Objects) """
+Object-Oriented Programming (Classes, Methods, Objects) """
+
 
 class Contactbook:
+    """ manages all the operations"""
 
     def __init__(self):
         self.contact = {}
+        self.person = person_details()
     
-
-    def contact_details(self):
-        """To input values from user for the contact book (name,ph number and email)"""
-
-        name = input("\nEnter the name:")     
-        phoneNumber = int(input("Enter the phone number:"))
-        emailId = input("Enter the email id:")
-        return name, phoneNumber, emailId
-
 
     def add_contact(self):
         """To add a contact to contact book"""
 
-        name, phoneNumber, emailId = self.contact_details()
+        name, phoneNumber, emailId = self.person.contact_details()
         if name in self.contact:
             print(f"\n{name} already exist in the contact book")
         else:    
@@ -115,6 +109,18 @@ class Contactbook:
         """To print star"""
 
         print("********************")
+
+class person_details:
+    """to add user details"""
+
+    def contact_details(self):
+        """To input values from user for the contact book (name,ph number and email)"""
+
+        name = input("\nEnter the name:")     
+        phoneNumber = int(input("Enter the phone number:"))
+        emailId = input("Enter the email id:")
+        return name, phoneNumber, emailId
+
 
 contactbook = Contactbook()
 
