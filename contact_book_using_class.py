@@ -14,6 +14,18 @@ Control Flow
 Object-Oriented Programming (Classes, Methods, Objects) """
 
 
+class person_details:
+    """to add user details"""
+
+    def contact_details(self):
+        """To input values from user for the contact book (name,ph number and email)"""
+
+        name = input("\nEnter the name:")     
+        phoneNumber = int(input("Enter the phone number:"))
+        emailId = input("Enter the email id:")
+        return name, phoneNumber, emailId
+
+
 class Contactbook:
     """ manages all the operations"""
 
@@ -109,17 +121,6 @@ class Contactbook:
         """To print star"""
 
         print("********************")
-
-class person_details:
-    """to add user details"""
-
-    def contact_details(self):
-        """To input values from user for the contact book (name,ph number and email)"""
-
-        name = input("\nEnter the name:")     
-        phoneNumber = int(input("Enter the phone number:"))
-        emailId = input("Enter the email id:")
-        return name, phoneNumber, emailId
 
 
 contactbook = Contactbook()
