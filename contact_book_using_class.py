@@ -1,5 +1,5 @@
 # Contact Book
-""" A simple Contact Book application built in Python to manage user details such as name, phonenumber and email. This project demonstrates two different programming approaches functional programming and object-oriented programming(OOP) to get a clear understanding of both styles.
+""" A simple Contact Book application built in Python to manage user details such as name, phonenumber and email. This project demonstrates object-oriented programming(OOP) programming approach.
 
 Features:
 Show All Contacts – View all saved contacts.
